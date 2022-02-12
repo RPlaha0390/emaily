@@ -1,5 +1,6 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import Button from "@mui/material/Button";
 
 function App() {
   return (
@@ -17,6 +18,11 @@ function App() {
         >
           Learn React
         </a>
+        <div style={{ marginTop: "50px" }}>
+          <a href="/auth/google" style={{ textDecoration: "none" }}>
+            <Button variant="contained">Hello World</Button>
+          </a>
+        </div>
       </header>
     </div>
   );
