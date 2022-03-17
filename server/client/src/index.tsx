@@ -1,23 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { configureStore } from '@reduxjs/toolkit';
+import { Provider } from 'react-redux';
 import { ThemeProvider } from '@mui/material';
 import './index.css';
 import App from './pages/App';
 import { theme } from './theming/theme';
-import { authApi } from './services/auth';
-
-// export const store = configureStore({
-//   reducer: {
-//     [authApi.reducerPath]: authApi.reducer,
-//   },
-//   middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
-// });
+import { store } from './store';
 
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <App />
+      <Provider store={store}>
+        <App />
+      </Provider>
     </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root'),
